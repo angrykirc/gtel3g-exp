@@ -505,33 +505,6 @@
 		runtime = <1>;
 	};
 
-	l_ion: ion {
-		compatible = "sprd,ion-sprd";
-		#address-cells = <1>;
-		#size-cells = <0>;
-
-		sprd,ion-heap@1 {
-			reg = <1>;                      /* SYSTEM */
-			reg-names = "ion_heap_system";
-			sprd,ion-heap-type = <0>;       /* SYSTEM */
-			/* sprd,ion-heap-mem = <0x0 0x0>; */
-		};
-
-		sprd,ion-heap@2 {
-			reg = <2>;                      /* MM */
-			reg-names = "ion_heap_carveout_mm";
-			sprd,ion-heap-type = <0>;       /* carveout mm */
-			/* sprd,ion-heap-mem = <0x0 0x0>; */
-		};
-
-		sprd,ion-heap@3 {
-			reg = <3>;                      /* OVERLAY */
-			reg-names = "ion_heap_carveout_overlay";
-			sprd,ion-heap-type = <2>;       /* CARVEOUT */
-			/* sprd,ion-heap-mem = <0x9f900000 0x700000>; */     /* 7M */
-		};
-	};
-
 	sprd_iommu0:sprd_iommu@F5410000 {
 		compatible  = "sprd,sprd_iommu";//gsp
 		func-name = "sprd_iommu_gsp";
@@ -611,30 +584,6 @@
 		sprd,ringnr = <32>;
 		sprd,size-rxbuf = <0x0800>; /* 2*1024*/
 		sprd,size-txbuf = <0x0800>; /* 2*1024 */
-	};
-
-	seth0-cpw {
-		compatible = "sprd,seth";
-		sprd,name = "seth_w0";
-		sprd,dst = <2>;
-		sprd,channel = <7>;
-		sprd,blknum = <128>;
-	};
-
-	seth1-cpw {
-		compatible = "sprd,seth";
-		sprd,name = "seth_w1";
-		sprd,dst = <2>;
-		sprd,channel = <8>;
-		sprd,blknum = <64>;
-	};
-
-	seth2-cpw {
-		compatible = "sprd,seth";
-		sprd,name = "seth_w2";
-		sprd,dst = <2>;
-		sprd,channel = <9>;
-		sprd,blknum = <64>;
 	};
 
 	scproc_cpw: scproc {

@@ -84,41 +84,6 @@
 		runtime = <1>;
 	};
 
-	/* Samsung uses the name rment for eth
-	 * FIXME: This change's location has to be finalized.
-	 */
-	seth0-cpw {
-		compatible = "sprd,seth";
-		sprd,name = "rmnet0";
-		sprd,dst = <2>;
-		sprd,channel = <7>;
-		sprd,blknum = <128>;
-	};
-
-	seth1-cpw {
-		compatible = "sprd,seth";
-		sprd,name = "rmnet1";
-		sprd,dst = <2>;
-		sprd,channel = <8>;
-		sprd,blknum = <64>;
-	};
-
-	seth2-cpw {
-		compatible = "sprd,seth";
-		sprd,name = "rmnet2";
-		sprd,dst = <2>;
-		sprd,channel = <9>;
-		sprd,blknum = <64>;
-	};
-
-	sprd_simdet {
-		compatible = "sprd,sim_detect";
-		sprd,name = "simdet";
-		gpios = <&d_gpio_gpio 162 0>;
-		irq_trigger_level_detect = <1>;
-		delay_time = <100>;
-	};
-
 	i2c_gpio6: i2c_gpio@1 {
 			compatible = "i2c-gpio";
 			#address-cells = <1>;
@@ -526,20 +491,6 @@
 	vdd-vmmc = "vddsdcore";
 	//vdd-vqmmc = "vddsdio";
 	//sd-supply = <&vddsdio>;
-};
-
-&l_ion {
-	sprd,ion-heap@1 {
-		sprd,ion-heap-mem = <0x0 0x0>;
-	};
-
-	sprd,ion-heap@2 {
-		sprd,ion-heap-mem = <0x0 0x0>;
-	};
-
-	sprd,ion-heap@3 {
-		sprd,ion-heap-mem = <0x9f600000 0x7d0000>;
-	};
 };
 
 &adi {
