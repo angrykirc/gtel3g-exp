@@ -1,0 +1,22 @@
+From 2aae02d4cc3d4485a7ad7525f9558f4fd0e14682 Mon Sep 17 00:00:00 2001
+From: angrykirc <aaa@aaa.ru>
+Date: Sun, 11 May 2025 15:11:23 +0300
+Subject: [PATCH] fix
+
+---
+ arch/arm/boot/compressed/piggy.gzip.S | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/arch/arm/boot/compressed/piggy.gzip.S b/arch/arm/boot/compressed/piggy.gzip.S
+index a68adf91..b7cbb70c 100755
+--- a/arch/arm/boot/compressed/piggy.gzip.S
++++ b/arch/arm/boot/compressed/piggy.gzip.S
+@@ -1,4 +1,4 @@
+-	.section .piggydata,#alloc
++	.section .piggydata, "ax"
+ 	.globl	input_data
+ input_data:
+ 	.incbin	"arch/arm/boot/compressed/piggy.gzip"
+-- 
+2.47.2
+
